@@ -1,3 +1,5 @@
+# co 3 linijka w CSV
+
 import os
 import pandas as pd
 

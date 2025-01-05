@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 colors = ["#1f77b4", "orange"]
 
 # Ścieżki do plików CSV
-input_folder = "edit_files/avg_files"
-output_folder = "edit_files/plots/FSL"
+input_folder = "edit_files/Measurement Campaigns/avg_files"
+output_folder = "edit_files/Measurement Campaigns/plots/FSL"
 file1 = os.path.join(input_folder, "avg_REFERENCYJNY_pierwszy.CSV")
 file2 = os.path.join(input_folder, "avg_REFERENCYJNY_drugi.CSV")
 
