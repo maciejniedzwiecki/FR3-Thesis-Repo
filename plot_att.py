@@ -95,7 +95,7 @@ def draw_plot(files, title, filename, y_min, y_max):
 
 # Generowanie wykresów
 print("Tworzę wykresy dla tłumienności...")
-draw_plot(all_files, "Average Material Attenuation (Without Copper & IRR Glass)", "all_materials_attenuation.png", y_min, y_max)
-draw_plot(excluded_files, "Average Material Attenuation (Copper & IRR Glass)", "excluded_materials_attenuation.png", excluded_y_min, excluded_y_max)
+draw_plot(all_files, "Average material losses (without Copper sheet & IRR Glass)", "all_materials_attenuation.png", y_min, y_max)
+draw_plot(excluded_files, "Average material losses (Copper sheet & IRR Glass)", "excluded_materials_attenuation.png", excluded_y_min, excluded_y_max)
 
 print("Proces generowania wykresów zakończony.")

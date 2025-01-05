@@ -95,7 +95,7 @@ def draw_plot(files, title, filename, y_min, y_max):
 
 # Generowanie wykresów
 print("Tworzę wykresy...")
-draw_plot(all_files, "Average Received Power", "all_measurements.png", y_min, y_max)
-draw_plot(excluded_files, "Average Received Power", "excluded_measurements.png", excluded_y_min, excluded_y_max)
+draw_plot(all_files, "Average received power (without Copper sheet & IRR glass)", "all_measurements.png", y_min, y_max)
+draw_plot(excluded_files, "Average received power (Copper sheet & IRR glass)", "excluded_measurements.png", excluded_y_min, excluded_y_max)
 
 print("Proces generowania wykresów zakończony.")

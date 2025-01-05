@@ -15,7 +15,7 @@ def filter_files(files, suffix, includes=None, excludes=None):
 
 # Ścieżki do folderów
 input_folder = "edit_files/Measurement Campaigns/avg_files"
-output_folder = "edit_files/Measurement Campaigns/plots"
+output_folder = "edit_files/Measurement Campaigns/plots/materials_campaigns"
 
 # Lista dostępnych markerów
 markers = ['o', 's', 'D', '^', 'v', '<', '>', 'p', '*', 'h', 'x', '+']
