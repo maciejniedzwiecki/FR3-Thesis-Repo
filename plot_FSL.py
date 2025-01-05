@@ -2,9 +2,12 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 
+# Definicja palety kolorów
+colors = ["#1f77b4", "orange"]
+
 # Ścieżki do plików CSV
 input_folder = "edit_files/avg_files"
-output_folder = "edit_files/plots"
+output_folder = "edit_files/plots/FSL"
 file1 = os.path.join(input_folder, "avg_REFERENCYJNY_pierwszy.CSV")
 file2 = os.path.join(input_folder, "avg_REFERENCYJNY_drugi.CSV")
 
@@ -43,7 +46,7 @@ y_min, y_max = -38, -28
 # Wykres 1: avg_REFERENCYJNY_pierwszy
 print("Tworzę wykres: avg_REFERENCYJNY_pierwszy")
 plt.figure(figsize=(10, 6))
-plt.plot(data1["Frequency"], data1["Power"], marker='o', label="First Measurement Campaign")
+plt.plot(data1["Frequency"], data1["Power"], marker='o', color=colors[0], label="First Measurement Campaign")
 plt.title("FSL (First Measurement Campaign)")
 plt.xlabel("f [GHz]")
 plt.ylabel("Received Power [dBm]")
@@ -58,7 +61,7 @@ print("Wykres avg_REFERENCYJNY_pierwszy zapisano.\n")
 # Wykres 2: avg_REFERENCYJNY_drugi
 print("Tworzę wykres: avg_REFERENCYJNY_drugi")
 plt.figure(figsize=(10, 6))
-plt.plot(data2["Frequency"], data2["Power"], marker='o', color='orange', label="Second Measurement Campaign")
+plt.plot(data2["Frequency"], data2["Power"], marker='o', color=colors[1], label="Second Measurement Campaign")
 plt.title("FSL (Second Measurement Campaign)")
 plt.xlabel("f [GHz]")
 plt.ylabel("Received Power [dBm]")
@@ -73,8 +76,8 @@ print("Wykres avg_REFERENCYJNY_drugi zapisano.\n")
 # Wykres 3: Oba pliki na jednym wykresie
 print("Tworzę wykres: avg_REFERENCYJNY_combined")
 plt.figure(figsize=(10, 6))
-plt.plot(data1["Frequency"], data1["Power"], marker='o', label="First Measurement Campaign")
-plt.plot(data2["Frequency"], data2["Power"], marker='o', color='orange', label="Second Measurement Campaign")
+plt.plot(data1["Frequency"], data1["Power"], marker='o', color=colors[0], label="First Measurement Campaign")
+plt.plot(data2["Frequency"], data2["Power"], marker='o', color=colors[1], label="Second Measurement Campaign")
 plt.title("Free-Space Loss Measurement")
 plt.xlabel("f [GHz]")
 plt.ylabel("Received Power [dBm]")
