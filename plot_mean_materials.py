@@ -49,8 +49,8 @@ all_files = [f for f in files if f.startswith("mean_avg") and all(x not in f for
 excluded_files = [f for f in files if f.startswith("mean_avg") and any(x in f for x in ["MIEDZ", "ZESPOLONA"])]
 
 # Zakresy osi Y
-y_min, y_max = -65, -29  # Dla podstawowych
-excluded_y_min, excluded_y_max = -105, -70  # Dla wykluczonych
+y_min, y_max = -60, -29  # Dla podstawowych
+excluded_y_min, excluded_y_max = -100, -75  # Dla wykluczonych
 
 # Funkcja do rysowania wykresów
 def draw_plot(files, title, filename, y_min, y_max):
@@ -95,7 +95,7 @@ def draw_plot(files, title, filename, y_min, y_max):
 
 # Generowanie wykresów
 print("Tworzę wykresy...")
-draw_plot(all_files, "Received Power (All Measurements)", "all_measurements.png", y_min, y_max)
-draw_plot(excluded_files, "Received Power (Excluded Measurements)", "excluded_measurements.png", excluded_y_min, excluded_y_max)
+draw_plot(all_files, "Average Received Power", "all_measurements.png", y_min, y_max)
+draw_plot(excluded_files, "Average Received Power", "excluded_measurements.png", excluded_y_min, excluded_y_max)
 
 print("Proces generowania wykresów zakończony.")
