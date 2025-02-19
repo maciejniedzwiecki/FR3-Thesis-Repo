@@ -2,11 +2,11 @@ import os
 import pandas as pd
 
 # Ścieżki do folderów
-input_folder = "edit_files/Measurement Campaigns/mean_files"
-output_folder = "edit_files/Attenuation/att_files"
+input_folder = "csv_files/mean"
+output_folder = "csv_files/attenuation"
 
 # Plik referencyjny
-reference_file = os.path.join(input_folder, "mean_avg_REFERENCYJNY.CSV")
+reference_file = os.path.join(input_folder, "mean_modified_REFERENCYJNY.CSV")
 
 # Sprawdzenie folderu wejściowego
 if not os.path.exists(input_folder):

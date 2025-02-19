@@ -4,8 +4,8 @@ import os
 import pandas as pd
 
 # Ścieżki do folderów
-input_folder = "edit_files/Measurement Campaigns/avg_files"
-output_folder = "edit_files/Measurement Campaigns/mean_files"
+input_folder = "csv_files/measured"
+output_folder = "csv_files/mean"
 
 # Sprawdzenie folderu wejściowego
 if not os.path.exists(input_folder):

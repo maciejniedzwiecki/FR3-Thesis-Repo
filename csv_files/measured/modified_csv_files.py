@@ -13,7 +13,7 @@ def frange(start, stop, step):
 
 # Ścieżki do folderów
 input_folder = r"raw_files"  # Folder z plikami CSV
-output_folder = r"edit_files\avg_files"  # Folder na pliki wynikowe
+output_folder = r"csv_files/measured"  # Folder na pliki wynikowe
 
 # Sprawdzenie folderu wejściowego
 if not os.path.exists(input_folder):
@@ -60,7 +60,7 @@ for i, file_name in enumerate(files):
         filtered_data["Frequency"] = frequency_values[:len(filtered_data)]
 
         # Zapisanie zmodyfikowanego pliku
-        new_file_name = f"avg_{file_name}"
+        new_file_name = f"modified_{file_name}"
         new_file_path = os.path.join(output_folder, new_file_name)
 
         try:

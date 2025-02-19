@@ -3,9 +3,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Ścieżki do pliku CSV
-input_folder = "edit_files/Measurement Campaigns/mean_files"
-output_folder = "edit_files/Measurement Campaigns/plots/FSL"
-input_file = os.path.join(input_folder, "mean_avg_REFERENCYJNY.CSV")
+input_folder = "csv_files/mean"
+output_folder = "plots/mean"
+input_file = os.path.join(input_folder, "mean_modified_REFERENCYJNY.CSV")
 
 # Sprawdzenie folderu wejściowego
 if not os.path.exists(input_folder):
@@ -49,8 +49,8 @@ plt.ylim(y_min, y_max)  # Ustalony zakres osi Y
 plt.yticks(range(y_min, y_max + 1, 1))  # Podziałka co 1 na osi Y
 plt.grid(True)
 plt.legend(loc='upper left')  # Legenda w lewym górnym rogu
-plt.savefig(os.path.join(output_folder, "mean_avg_REFERENCYJNY.png"))
+plt.savefig(os.path.join(output_folder, "mean_modified_REFERENCYJNY.png"))
 plt.close()
-print("Wykres mean_avg_REFERENCYJNY zapisano.\n")
+print("Wykres mean_modified_REFERENCYJNY zapisano.\n")
 
 print("Proces generowania wykresu zakończony.")

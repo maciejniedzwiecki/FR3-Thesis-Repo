@@ -6,10 +6,10 @@ import matplotlib.pyplot as plt
 colors = ["#1f77b4", "orange"]
 
 # Ścieżki do plików CSV
-input_folder = "edit_files/Measurement Campaigns/avg_files"
-output_folder = "edit_files/Measurement Campaigns/plots/FSL"
-file1 = os.path.join(input_folder, "avg_REFERENCYJNY_pierwszy.CSV")
-file2 = os.path.join(input_folder, "avg_REFERENCYJNY_drugi.CSV")
+input_folder = "csv_files/measured"
+output_folder = "plots/measured"
+file1 = os.path.join(input_folder, "modified_REFERENCYJNY_pierwszy.CSV")
+file2 = os.path.join(input_folder, "modified_REFERENCYJNY_drugi.CSV")
 
 # Sprawdzenie folderu wejściowego
 if not os.path.exists(input_folder):
@@ -54,7 +54,7 @@ plt.ylim(y_min, y_max)  # Ustalony zakres osi Y
 plt.yticks(range(y_min, y_max + 1, 1))  # Podziałka co 1 na osi Y
 plt.grid(True)
 plt.legend(loc='upper left')  # Legenda w lewym górnym rogu
-plt.savefig(os.path.join(output_folder, "avg_REFERENCYJNY_pierwszy.png"))
+plt.savefig(os.path.join(output_folder, "modified_REFERENCYJNY_pierwszy.png"))
 plt.close()
 print("Wykres avg_REFERENCYJNY_pierwszy zapisano.\n")
 
@@ -69,7 +69,7 @@ plt.ylim(y_min, y_max)  # Ustalony zakres osi Y
 plt.yticks(range(y_min, y_max + 1, 1))  # Podziałka co 1 na osi Y
 plt.grid(True)
 plt.legend(loc='upper left')  # Legenda w lewym górnym rogu
-plt.savefig(os.path.join(output_folder, "avg_REFERENCYJNY_drugi.png"))
+plt.savefig(os.path.join(output_folder, "modified_REFERENCYJNY_drugi.png"))
 plt.close()
 print("Wykres avg_REFERENCYJNY_drugi zapisano.\n")
 
@@ -85,7 +85,7 @@ plt.ylim(y_min, y_max)  # Ustalony zakres osi Y
 plt.yticks(range(y_min, y_max + 1, 1))  # Podziałka co 1 na osi Y
 plt.grid(True)
 plt.legend(loc='upper left')  # Legenda w lewym górnym rogu
-plt.savefig(os.path.join(output_folder, "avg_REFERENCYJNY_combined.png"))
+plt.savefig(os.path.join(output_folder, "modified_REFERENCYJNY_combined.png"))
 plt.close()
 print("Wykres avg_REFERENCYJNY_combined zapisano.\n")
 

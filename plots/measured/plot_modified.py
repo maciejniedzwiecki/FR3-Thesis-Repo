@@ -14,8 +14,8 @@ def filter_files(files, suffix, includes=None, excludes=None):
 
 
 # Ścieżki do folderów
-input_folder = "edit_files/Measurement Campaigns/avg_files"
-output_folder = "edit_files/Measurement Campaigns/plots/materials_campaigns"
+input_folder = "csv_files/measured"
+output_folder = "plots/measured"
 
 # Lista dostępnych markerów
 markers = ['o', 's', 'D', '^', 'v', '<', '>', 'p', '*', 'h', 'x', '+']
@@ -29,24 +29,24 @@ colors = ["#1f77b4", "orange", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e37
 
 # Mapowanie nazw plików na etykiety w legendzie
 labels_mapping = {
-    "avg_DREWNO_pierwszy.CSV": "Wooden wall",
-    "avg_DREWNO_drugi.CSV": "Wooden wall",
-    "avg_KASETONY_pierwszy.CSV": "Ceiling Tiles",
-    "avg_KASETONY_drugi.CSV": "Ceiling Tiles",
-    "avg_LAZIENKA_pierwszy.CSV": "Interior wall",
-    "avg_LAZIENKA_drugi.CSV": "Interior wall",
-    "avg_MIEDZ_pierwszy.CSV": "Copper sheet",
-    "avg_MIEDZ_drugi.CSV": "Copper sheet",
-    "avg_OSB_pierwszy.CSV": "OSB board",
-    "avg_OSB_drugi.CSV": "OSB board",
-    "avg_PLEKSI_pierwszy.CSV": "Polycarbonate",
-    "avg_PLEKSI_drugi.CSV": "Polycarbonate",
-    "avg_PUSTAK_pierwszy.CSV": "External wall",
-    "avg_PUSTAK_drugi.CSV": "External wall",
-    "avg_SZKLO_pierwszy.CSV": "Glass",
-    "avg_SZKLO_drugi.CSV": "Glass",
-    "avg_ZESPOLONA_pierwszy.CSV": "IRR glass",
-    "avg_ZESPOLONA_drugi.CSV": "IRR glass",
+    "modified_DREWNO_pierwszy.CSV": "Wooden wall",
+    "modified_DREWNO_drugi.CSV": "Wooden wall",
+    "modified_KASETONY_pierwszy.CSV": "Ceiling Tiles",
+    "modified_KASETONY_drugi.CSV": "Ceiling Tiles",
+    "modified_LAZIENKA_pierwszy.CSV": "Interior wall",
+    "modified_LAZIENKA_drugi.CSV": "Interior wall",
+    "modified_MIEDZ_pierwszy.CSV": "Copper sheet",
+    "modified_MIEDZ_drugi.CSV": "Copper sheet",
+    "modified_OSB_pierwszy.CSV": "OSB board",
+    "modified_OSB_drugi.CSV": "OSB board",
+    "modified_PLEKSI_pierwszy.CSV": "Polycarbonate",
+    "modified_PLEKSI_drugi.CSV": "Polycarbonate",
+    "modified_PUSTAK_pierwszy.CSV": "External wall",
+    "modified_PUSTAK_drugi.CSV": "External wall",
+    "modified_SZKLO_pierwszy.CSV": "Glass",
+    "modified_SZKLO_drugi.CSV": "Glass",
+    "modified_ZESPOLONA_pierwszy.CSV": "IRR glass",
+    "modified_ZESPOLONA_drugi.CSV": "IRR glass",
 }
 
 # Sprawdzenie folderu wejściowego
@@ -70,15 +70,15 @@ else:
 
 # Pliki referencyjne (do całkowitego wykluczenia)
 reference_files = [
-    "avg_REFERENCYJNY_pierwszy.CSV",
-    "avg_REFERENCYJNY_drugi.CSV"
+    "modified_REFERENCYJNY_pierwszy.CSV",
+    "modified_REFERENCYJNY_drugi.CSV"
 ]
 
 # Filtrowanie plików
 pierwszy_files = filter_files(files, "_pierwszy.CSV",
-                              excludes=reference_files + ["avg_MIEDZ_pierwszy.CSV", "avg_ZESPOLONA_pierwszy.CSV"])
+                              excludes=reference_files + ["modified_MIEDZ_pierwszy.CSV", "modified_ZESPOLONA_pierwszy.CSV"])
 drugi_files = filter_files(files, "_drugi.CSV",
-                           excludes=reference_files + ["avg_MIEDZ_drugi.CSV", "avg_ZESPOLONA_drugi.CSV"])
+                           excludes=reference_files + ["modified_MIEDZ_drugi.CSV", "modified_ZESPOLONA_drugi.CSV"])
 
 excluded_pierwszy_files = filter_files(files, "_pierwszy.CSV", includes=["MIEDZ", "ZESPOLONA"])
 excluded_drugi_files = filter_files(files, "_drugi.CSV", includes=["MIEDZ", "ZESPOLONA"])
@@ -133,15 +133,15 @@ def draw_plot(files, title, filename, output_folder, y_min, y_max):
 
 # Generowanie wykresów dla plików podstawowych
 print("Tworzę wykresy dla plików podstawowych")
-draw_plot(pierwszy_files, "Received Power (First Measurement Campaign)", "series_pierwszy.png", output_folder, y_min,
+draw_plot(pierwszy_files, "Received Power (First Measurement Campaign)", "measured_pierwszy.png", output_folder, y_min,
           y_max)
-draw_plot(drugi_files, "Received Power (Second Measurement Campaign)", "series_drugi.png", output_folder, y_min, y_max)
+draw_plot(drugi_files, "Received Power (Second Measurement Campaign)", "measured_drugi.png", output_folder, y_min, y_max)
 
 # Generowanie wykresów dla plików wykluczonych
 print("Tworzę wykresy dla plików wykluczonych")
 draw_plot(excluded_pierwszy_files, "Received Power (First Measurement Campaign)",
-          "excluded_series_pierwszy.png", output_folder, excluded_y_min, excluded_y_max)
+          "excluded_modified_pierwszy.png", output_folder, excluded_y_min, excluded_y_max)
 draw_plot(excluded_drugi_files, "Received Power (Second Measurement Campaign)",
-          "excluded_series_drugi.png", output_folder, excluded_y_min, excluded_y_max)
+          "excluded_modified_drugi.png", output_folder, excluded_y_min, excluded_y_max)
 
 print("Proces generowania wykresów zakończony.")
